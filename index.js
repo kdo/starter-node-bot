@@ -66,3 +66,7 @@ controller.hears(['attachment'], ['direct_message', 'direct_mention'], function 
 controller.hears('.*', ['direct_message', 'direct_mention'], function (bot, message) {
   bot.reply(message, 'Sorry <@' + message.user + '>, I don\'t understand. \n')
 })
+
+controller.hears('(rage|rageozzine) (.*)', ['message_received'], function (bot, message) {
+  bot.reply(message.match[2].toUpperCase())
+})
