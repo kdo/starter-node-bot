@@ -68,5 +68,5 @@ controller.hears('.*', ['direct_message', 'direct_mention'], function (bot, mess
 })
 
 controller.hears(['rage (.*)', 'rageozzine (.*)'], ['message_received', 'ambient'], function (bot, message) {
-  bot.reply(message.match[1].toUpperCase())
+  bot.reply(message, message.match[1].toUpperCase())
 })
