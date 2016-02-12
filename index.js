@@ -1,5 +1,4 @@
 var Botkit = require('botkit')
-var rand = require('unique-random-array');
 
 // Expect a SLACK_TOKEN environment variable
 var slackToken = process.env.SLACK_TOKEN
@@ -122,8 +121,6 @@ var dance_images = [
   'https://s3.amazonaws.com/uploads.hipchat.com/52421/365128/J2ybLnY0i9ztonx/ezgif-124903556.gif'
 ]
 
-var randDance = rand(dance_images);
-
 controller.hears(['^!dance'], ['message_received', 'ambient'], function (bot, message) {
-  bot.reply(message, randDance())
+  bot.reply(message, dance_images[Math.floor(Math.random()*dance_images.length)])
 })
