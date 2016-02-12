@@ -73,7 +73,7 @@ controller.hears(['^rage (.*)', '^rageozzine (.*)'], ['message_received', 'ambie
 })
 
 // Dance
-dance_images = [
+var dance_images = [
   'http://www.bigdancelist.com/jb/jb-ani1.gif#.png',
   'https://media.giphy.com/media/XXIE5W8U73l1m/giphy.gif',
   'https://s3.amazonaws.com/uploads.hipchat.com/52421/487588/cJpRGnFw33THdyd/bboy-bear.gif',
@@ -122,8 +122,8 @@ dance_images = [
   'https://s3.amazonaws.com/uploads.hipchat.com/52421/365128/J2ybLnY0i9ztonx/ezgif-124903556.gif'
 ]
 
-randDance = rand(dance_images);
+var randDance = rand(dance_images);
 
 controller.hears(['^!dance'], ['message_received', 'ambient'], function (bot, message) {
-  bot.reply(message, randDance)
+  bot.reply(message, randDance())
 })
